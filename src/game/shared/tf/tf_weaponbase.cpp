@@ -331,7 +331,6 @@ CTFWeaponBase::CTFWeaponBase()
 	
 #ifdef CLIENT_DLL
 	m_iCachedModelIndex = 0;
-	m_hEjectBrassWeapon = NULL;
 	m_iEjectBrassAttachpoint = -2;
 
 	m_bInitViewmodelOffset = false;
@@ -4837,7 +4836,7 @@ bool CTFWeaponBase::OnFireEvent( C_BaseViewModel *pViewModel, const Vector& orig
 {
 	if ( event == 6002 && ShouldEjectBrass() )
 	{
-		m_hEjectBrassWeapon = GetWeaponForEffect();
+		EHANDLE m_hEjectBrassWeapon = GetWeaponForEffect();
 		if ( !m_hEjectBrassWeapon )
 			return true;
 

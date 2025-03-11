@@ -719,7 +719,6 @@ protected:
 	bool m_bOldResetParity;
 	int m_iCachedModelIndex;
 
-	EHANDLE m_hEjectBrassWeapon;
 	int m_iEjectBrassAttachpoint;
 
 #endif
