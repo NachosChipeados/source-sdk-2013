@@ -718,7 +718,6 @@ protected:
 #ifdef CLIENT_DLL
 	bool m_bOldResetParity;
 	int m_iCachedModelIndex;
-
 	int m_iEjectBrassAttachpoint;
 
 #endif
