@@ -11,9 +11,6 @@
 #include "tf_weapon_parse.h"
 #include "econ_item_system.h"
 
-#define TE_RIFLE_SHELL 1024
-#define TE_PISTOL_SHELL 2048
-
 extern CTFWeaponInfo *GetTFWeaponInfo( int iWeapon );
 
 //-----------------------------------------------------------------------------
@@ -86,7 +83,18 @@ void TF_EjectBrassCallback( const CEffectData &data )
 	pTemp->m_vecTempEntAngVelocity[1] = random->RandomFloat(-255,255);
 	pTemp->m_vecTempEntAngVelocity[2] = random->RandomFloat(-255,255);
 
-	pTemp->hitSound = TE_PISTOL_SHELL;
+	if ( data.m_nHitBox == TF_WEAPON_SHOTGUN_PRIMARY ||
+		data.m_nHitBox == TF_WEAPON_SHOTGUN_SOLDIER ||
+		data.m_nHitBox == TF_WEAPON_SHOTGUN_HWG ||
+		data.m_nHitBox == TF_WEAPON_SHOTGUN_PYRO ||
+		data.m_nHitBox == TF_WEAPON_SCATTERGUN )
+	{
+		pTemp->hitSound = TE_SHOTGUN_SHELL;
+	}
+	else
+	{
+		pTemp->hitSound = TE_PISTOL_SHELL;
+	}
 
 	pTemp->SetGravity( 0.4 );
 

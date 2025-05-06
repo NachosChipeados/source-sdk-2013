@@ -95,15 +95,6 @@ C_LocalTempEntity::C_LocalTempEntity()
 	m_pszImpactEffect = NULL;
 }
 
-
-#if defined( CSTRIKE_DLL ) || defined (SDK_DLL )
-
-#define TE_RIFLE_SHELL 1024
-#define TE_PISTOL_SHELL 2048
-#define TE_SHOTGUN_SHELL 4096
-
-#endif
-
 //-----------------------------------------------------------------------------
 // Purpose: Prepare a temp entity for creation
 // Input  : time - 
@@ -2222,7 +2213,7 @@ void CTempEnts::PlaySound ( C_LocalTempEntity *pTemp, float damp )
 		}
 		break;
 
-#ifdef CSTRIKE_DLL
+#if defined( CSTRIKE_DLL ) || defined( TF_CLIENT_DLL )
 
 		case TE_PISTOL_SHELL:
 		{

@@ -32,6 +32,14 @@ enum
 };
 #endif
 
+#if defined( CSTRIKE_DLL ) || defined( SDK_DLL ) || defined( TF_CLIENT_DLL )
+
+#define TE_RIFLE_SHELL 1024
+#define TE_PISTOL_SHELL 2048
+#define TE_SHOTGUN_SHELL 4096
+
+#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: Interface for lecacy temp entities
 //-----------------------------------------------------------------------------
